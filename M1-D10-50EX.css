@@ -1,0 +1,63 @@
+body {
+	max-width: 800px;
+	display: block;
+	justify-content: center;
+	margin: 0 auto;
+}
+
+h1 {
+	text-align: center;
+}
+
+a {
+	color: green;
+}
+
+.paragraph {
+	border: 2px #1f1f1f;
+	border-style: dotted solid solid dotted;
+	margin-bottom: 16px;
+}
+
+table {
+	border-spacing:0;
+	border-collapse: separate;
+	border-radius: 16px;
+	-moz-border-radius: 16px;
+}
+
+table, td{
+	border: 1px dashed grey;
+	padding: 8px;
+}
+
+.class2 {
+	font-size: 0.8em;
+	font-weight: 300;
+	font-style: italic;
+}
+
+.hideThis {
+	/* OR visibility: hidden; */
+	display: none;
+}
+
+td {
+	border: 1px solid green;
+}
+
+td:first-child {
+	border-left: 1px solid red;
+}
+
+td:last-child {
+	border-right: 1px solid red;
+}
+
+.firstRow {
+	border-top: 1px solid red;
+}
+
+.lastRow {
+	border-bottom: 1px solid red;
+}
