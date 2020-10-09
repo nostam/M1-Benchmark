@@ -59,3 +59,80 @@ const bigger = function () {
 	let b = sumArrArr(arrArr);
 	return (a > b) ? a : b;
 }
+
+////////////////////////////////////////////////////////////
+// DOM
+////////////////////////////////////////////////////////////
+window.onload = function () {
+	// container ID
+	document.querySelector('#container');
+	// All td elements
+	document.querySelectorAll('td');
+	//
+	const printTD = function () {
+		let td = document.querySelectorAll('td');
+		let tmp = [];
+		for (let i = 0; i < td.length; i++) {
+			tmp.push(td[i].innerText);
+			console.log(tmp[i])
+		}
+		return tmp;
+	}
+	printTD();
+	// new heading
+	document.querySelector('h1').innerText = "Are you using firefox yet?"
+	// new row
+	const newTR = function () {
+		let table = document.querySelector('#ex4');
+		let row = table.insertRow(-1);
+		let cell = row.insertCell(0);
+		cell.colSpan = "5";
+		let lastRow = document.querySelectorAll('.lastRow');
+		for (let i = 0; i < lastRow.length; i++) {
+			lastRow[i].classList.remove('lastRow');
+		}
+		cell.className = "lastRow";
+		cell.innerText = "Text for new row";
+	}
+	newTR();
+	// new class for tr
+	const newTRClass = function () {
+		let tr = document.querySelectorAll('tr');
+		for (let i = 0; i < tr.length; i++) {
+			tr[i].setAttribute('class', 'test');
+		}
+	}
+	newTRClass();
+	// link with red background
+	const changeLinkBG = function () {
+		let bg = document.querySelectorAll('a');
+		for (let i = 0; i < bg.length; i++) {
+			bg[i].style.background = "red";
+		}
+	}
+	changeLinkBG()
+	// successfully loaded
+	console.log("The page is successfully loaded.")
+	// add new items
+	const newUL = function (text) {
+		let ul = document.querySelector('ul')
+		let li = document.createElement('li')
+		li.innerText = text;
+		ul.appendChild(li);
+	}
+	newUL("new items 39a");
+	newUL("new items 39b");
+	newUL("new items 39c");
+	const removeLast = function () {
+		let ul = document.querySelector('ul')
+		ul.removeChild(ul.lastChild);
+	}
+	// empty list
+	const emptyList = function () {
+		let length = document.querySelectorAll('li').length;
+		for (let i = 0; i < length; i++) {
+			removeLast();
+		}
+	}
+	emptyList();
+}
