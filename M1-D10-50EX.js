@@ -107,6 +107,8 @@ window.onload = function () {
 	const changeLinkBG = function () {
 		let bg = document.querySelectorAll('a');
 		for (let i = 0; i < bg.length; i++) {
+			bg[i].style.backgroundSize = "contain";
+			bg[i].style.backgroundRepeat = "no-repeat";
 			bg[i].style.background = "red";
 		}
 	}
@@ -135,4 +137,56 @@ window.onload = function () {
 		}
 	}
 	emptyList();
+
+	///////////////////////////////////////////////////////////
+	//  Extra
+	///////////////////////////////////////////////////////////
+	let a = document.querySelectorAll('a')
+	for (let i = 0; i < a.length; i++) {
+		a[i].addEventListener("mouseover", alert(a[i].href))
+	}
+
+	// hide image button
+	const toggleImage = function () {
+		let img = document.querySelectorAll('img');
+		if (img[0].style.visibility === 'visible') {
+			for (let i = 0; i < a.length; i++) {
+				img[i].style.visibility = 'hidden'
+			}
+		} else if (img[0].style.visibility === 'hidden') {
+			for (let i = 0; i < a.length; i++) {
+				img[i].style.visibility = 'visible'
+			}
+		}
+	}
+	const myDiv = document.querySelector('#ex9');
+	let imageButton = document.createElement('div');
+	imageButton.innerText = "Hide all images";
+	imageButton.className = "button";
+	myDiv.appendChild(imageButton);
+	imageButton.onclick = function (event) {
+		for (let i = 0; i < a.length; i++) {
+			let img = document.querySelectorAll('img');
+			img[i].style.visibility = 'hidden'
+		}
+	}
+
+	let imageToggle = document.createElement('div');
+	imageToggle.innerText = "Toggle images";
+	imageToggle.className = "button";
+	myDiv.appendChild(imageToggle);
+	imageToggle.onclick = function (event) {
+		toggleImage();
+	}
+
+	const sumIfNumber = function () {
+		let tr = document.querySelectorAll('tr');
+		let total = 0;
+		for (let i = 0; i < tr.length; i++) {
+			if (typeof td[i].innerText === "number") {
+				total += td[i].innerText;
+			}
+		}
+		return total;
+	}
 }
