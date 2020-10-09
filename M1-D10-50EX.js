@@ -189,4 +189,15 @@ window.onload = function () {
 		}
 		return total;
 	}
+
+	//45 no onclick
+	let title = document.querySelector('h1')
+	document.title.onclick = function (event) {
+		document.title.innerText.substring(0, -1)
+	}
+
+	//46
+	document.querySelector('td').onclick = function (event) {
+		event.target.style.background = "black";
+	}
 }
