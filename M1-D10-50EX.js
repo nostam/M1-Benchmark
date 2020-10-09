@@ -176,11 +176,11 @@ window.onload = function () {
 	imageToggle.className = "button";
 	myDiv.appendChild(imageToggle);
 	imageToggle.onclick = function (event) {
-		toggleImage();
+		toggleImage()
 	}
 
 	const sumIfNumber = function () {
-		let tr = document.querySelectorAll('tr');
+		let td = document.querySelectorAll('td');
 		let total = 0;
 		for (let i = 0; i < tr.length; i++) {
 			if (typeof td[i].innerText === "number") {
@@ -200,4 +200,10 @@ window.onload = function () {
 	document.querySelector('td').onclick = function (event) {
 		event.target.style.background = "black";
 	}
+
+	//47
+	let del = document.createElement('div');
+	del.className = "button";
+	del.innerText = "delete";
+	myDiv.appendChild(del);
 }
